@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GP Wallet BD</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="brand">GP <span>WALLET BD</span></div><div id="topUser" class="muted">নিরাপদ মাইক্রো-জব প্ল্যাটফর্ম</div></header>
+<main class="wrap">
+<section id="authView" class="auth-grid">
+  <div class="hero card"><div class="pill">MICRO JOB • TASKS • WALLET</div><h1>কাজ করুন, অগ্রগতি দেখুন</h1><p>অ্যাকাউন্ট তৈরি করে লগইন করুন। লগইন না করলে ড্যাশবোর্ড ও টাস্ক দেখা যাবে না। কাজের আয় নিশ্চিত নয়; প্রতিটি টাস্কের শর্ত দেখুন।</p><div class="hero-stat"><b>GP Wallet BD</b><span>Mobile-first earning dashboard</span></div></div>
+  <div class="card auth-card">
+    <div class="tabs"><button class="tab active" data-mode="login">লগইন</button><button class="tab" data-mode="signup">নতুন অ্যাকাউন্ট</button></div>
+    <form id="authForm"><label>ইমেইল</label><input id="email" type="email" required placeholder="you@example.com"><label>পাসওয়ার্ড</label><input id="password" type="password" minlength="6" required placeholder="কমপক্ষে ৬ অক্ষর"><button class="btn primary full" id="authSubmit">লগইন করুন</button></form>
+    <button id="resetBtn" class="link-btn">পাসওয়ার্ড ভুলে গেছেন?</button><p id="authMessage" class="message"></p>
+  </div>
+</section>
+<section id="appView" hidden>
+  <div class="welcome"><div><div class="pill">USER DASHBOARD</div><h1>স্বাগতম, <span id="userEmail"></span></h1><p class="muted">আপনার কাজ, ব্যালেন্স ও আবেদনের অবস্থা এখানে দেখুন।</p></div><button id="logoutBtn" class="btn outline">লগআউট</button></div>
+  <div class="stats"><div class="stat card"><span>উপলব্ধ ব্যালেন্স</span><strong id="balance">$0.00</strong></div><div class="stat card"><span>মোট আয়</span><strong id="totalEarned">$0.00</strong></div><div class="stat card"><span>সম্পন্ন কাজ</span><strong id="completedCount">0</strong></div><div class="stat card"><span>ভেরিফিকেশন</span><strong id="verifyStatus">অপেক্ষমাণ</strong></div></div>
+  <div id="notice" class="notice card" hidden></div>
+  <div class="section-head"><div><h2>উপলভ্য টাস্ক</h2><p class="muted">কাজের নির্দেশনা পড়ে তারপর কাজ শুরু করুন।</p></div><button class="btn small outline" id="refreshTasks">রিফ্রেশ</button></div>
+  <div id="taskList" class="task-grid"><div class="card muted">টাস্ক লোড হচ্ছে…</div></div>
+  <div class="two-col">
+    <section class="card"><h2>ডিপোজিট আবেদন</h2><p class="muted">পেমেন্ট করার আগে অ্যাডমিনের দেখানো নম্বর যাচাই করুন।</p><form id="depositForm"><label>পদ্ধতি</label><select id="depositMethod" required></select><label>পরিমাণ (USD)</label><input id="depositAmount" type="number" min="1" step=".01" required><label>লেনদেন ID / রেফারেন্স</label><input id="depositRef" required maxlength="100"><button class="btn primary full">আবেদন জমা দিন</button></form><p id="depositMessage" class="message"></p><div id="paymentInfo" class="muted"></div></section>
+    <section class="card"><h2>উত্তোলন আবেদন</h2><form id="withdrawForm"><label>পদ্ধতি</label><select id="withdrawMethod" required></select><label>পরিমাণ (USD)</label><input id="withdrawAmount" type="number" min="1" step=".01" required><label>পেমেন্ট নম্বর / ওয়ালেট</label><input id="withdrawAddress" required maxlength="120"><button class="btn primary full">উত্তোলনের আবেদন</button></form><p id="withdrawMessage" class="message"></p></section>
+  </div>
+  <section class="card"><h2>আমার জমা দেওয়া কাজ</h2><div id="mySubmissions" class="table-wrap muted">কোনো জমা নেই।</div></section>
+  <section class="card"><h2>হেল্প সেন্টার</h2><p id="helpText" class="muted">সাপোর্ট তথ্য লোড হচ্ছে…</p><a id="helpLink" class="btn outline" href="#" target="_blank" rel="noopener" hidden>সাপোর্ট খুলুন</a></section>
+  <footer class="footer">GP Wallet BD • সঠিক টাস্ক সম্পন্ন করুন। কখনোই বিজ্ঞাপনে ক্লিক বা ভুয়া প্রমাণ জমা দেবেন না।</footer>
+</section>
+</main>
+<script type="module" src="app.js"></script>
+</body></html>
